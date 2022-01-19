@@ -6,11 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "seed": "node seeds/seed.js"
+    "seed": "node seeds/seed.js",
+    "publish": "gh-pages -d index.js"
   },
   "repository": {
     "type": "git",
-    "url": "Week14HW"
+    "url": "https://humkeyg.github.io/Tech-Blog/"
   },
   "author": "Gabrielle Humkey",
   "license": "ISC",

@@ -1,0 +1,15 @@
+<div class="card">
+    <h3 class="card-header">Edit Blog Post</h3>
+    <form class="card-body edit-blog-form">
+        <label for="blog-title" class="form-label">Title</label>
+        <input name="blog-title" type="text" id="edit-title" value="{{blog.title}}" class="form-input" />
+        <label class="form-label" for="content">Content</label>
+        <input name="content" type="text" id="content" value="{{blog.content}}" class="form-input" />
+        <button type="submit" id="update-btn" class="btn">Update Blog Post</button>
+        <button type="button" id="delete-blog" data-id="{{blog.id}}"class="delete-blog-btn btn">Delete Blog Post</button>
+    </form>
+</div>
+
+
+<script src="/javascript/editBlog.js"></script>
+<script src="/javascript/deleteBlog.js"></script>

@@ -1,0 +1,34 @@
+{{#if logged_in}}
+{{#if posts.length}}
+<section>
+    <h2> {{username}}'s Blog Posts</h2>
+    {{#each blogs as |blog|}}
+    <div class="card">
+        <div class="card-header">
+            <h4><a class="link" href="/dashboard/edit/{{id}}">{{title}}</a></h4>
+        </div>
+        <div class="comments">
+            {{#each comments as |comment|}}
+            <div class="card">
+                <h3 class="card-header"></h3>
+                <section class="comment card-body">
+                    <div class="text">
+                        {{comments_text}}
+                    </div>
+                    <div class="meta">
+                        {{user.username}}, {{format_date created_at}}
+                    </div>
+                </section>
+            </div>
+            {{/each}}
+        </div>
+
+    </div>
+    {{/each}}
+</section>
+{{/if}}
+
+<button type="submit" class="btn"><a class="link" href="/dashboard/new"> Add New Blog Post</a></button>
+
+<script src="/javascript/addBlogs.js"></script>
+{{/if}}

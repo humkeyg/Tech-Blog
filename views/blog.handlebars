@@ -1,8 +1,23 @@
-<div class="text-center">
-  <h2>{{name}}</h2>
-  <p>{{description}}</p>
-  <p>Created by {{user.name}} on {{format_date date_created}}</p>
-  <p>
-    <button class="btn btn-primary">View full post</button>
-  </p>
+<div id="blog-history">
+    <card>Blog Post</card>
+    
+    <div class="row mb-4 blog">
+        <div class="col-md-5">
+            <a href="/blog/{{id}}">{{title}}</a>
+
+            <p>Created by {{user.name}} on {{format_date date_created}}</p>
+        </div>
+        <hr>
+        <div class="col-md-7">
+            <p>
+                {{content}}
+            </p>
+           
+        </div>
+    </div>
+  
 </div>
+<button data-id="{{id}}" id="blog-delete-btn" class="btn">Delete Post</button>
+<textarea placeholder="Add a comment"></textarea>
+<button data-id="{{id}}" id="comment-btn" class="btn">Save Comment</button>
+<script src="/js/blog.js"></script>

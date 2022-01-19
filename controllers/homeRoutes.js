@@ -47,14 +47,14 @@ router.get('/blog/:id', async (req, res) => {
 });
 
 router.get('/profile', withAuth, async (req, res) => {
+  console.log(req.session.user_id);
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
     });
-
+    console.log("we are at line 55");
     const user = userData.get({ plain: true });
-
+    console.log("we are at line 57");
     res.render('profile', {
       ...user,
       logged_in: true
@@ -71,6 +71,24 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+router.get('/blog/:id', withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ['password'] },
+      include: [{ model: Blog }],
+    });
+
+    const user = userData.get({ plain: true });
+    console.log(user);
+    res.render('blog', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

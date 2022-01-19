@@ -39,9 +39,4 @@ const newFormHandler = async (event) => {
   
   document
     .querySelector('.new-blog-form')
-    .addEventListener('submit', newFormHandler);
-  
-  document
-    .querySelector('.project-list')
-    .addEventListener('click', delButtonHandler);
-  
+    .addEventListener('click', newFormHandler);

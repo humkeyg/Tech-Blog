@@ -22,7 +22,7 @@ Blog.init(
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW, //unix time stamp: number of seconds since epoch(12a Jan 1, 1970) at UTC/GMT (timezone 0)
+      defaultValue: DataTypes.NOW,
     },
     user_id: {
       type: DataTypes.INTEGER,

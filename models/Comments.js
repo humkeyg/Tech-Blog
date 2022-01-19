@@ -11,14 +11,14 @@ Comments.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        name: {
-            type: DataTypes.STRING,
-            allowNull: false,
+        comments_text: {
+          type: DataTypes.STRING,
+          allowNull: false,
+          validate: {
+            len: [3]
+          }
         },
-        description: {
-            type: DataTypes.STRING,
-        },
-        date_created: {
+        created_at: {
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,

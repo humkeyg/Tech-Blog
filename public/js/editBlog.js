@@ -7,7 +7,7 @@ const newFormHandler = async (event) => {
   const id = window.location.toString().split('/')[
     window.location.toString().split('/').length - 1];
 
-  const response = await fetch(`/api/blogs/${id}`, {
+  const response = await fetch(`/api/blog/${id}`, {
     method: 'PUT',
     body: JSON.stringify({ post_id: id, title, content }),
     headers: {

@@ -101,7 +101,7 @@ router.get('/blog/:id', (req, res) => {
       });
 });
 
-router.get('/blogs-comments', (req, res) => {
+router.get('/blog-comments', (req, res) => {
   Blog.findOne({
           where: {
               id: req.params.id

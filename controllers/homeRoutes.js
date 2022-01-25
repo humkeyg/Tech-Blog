@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Blog, User, Comments } = require('../models');
 const withAuth = require('../utils/auth');
+const { format_date } = require('../utils/helpers');
 
 router.get('/', (req, res) => {
   Blog.findAll({
@@ -26,7 +27,16 @@ router.get('/', (req, res) => {
       })
 
       .then(dbBlogData => {
-          const blogs = dbBlogData.map(blog => blog.get({ plain: true }));
+          const blogs = dbBlogData.map(blog =>{
+            const plain = blog.get({ plain: true });
+            console.log(plain);
+            const formattedDate = format_date(plain.created_at);
+            console.log(formattedDate);
+            plain.created_at = formattedDate;
+            console.log(plain);
+            return plain;
+          })
+          
           res.render('homepage', { blogs, logged_in: req.session.logged_in });
       })
 
@@ -123,7 +133,7 @@ router.get('/blogs-comments', (req, res) => {
           }
           const blog = dbBlogData.get({ plain: true });
 
-          res.render('blogs-comments', { blog, logged_in: req.session.logged_in });
+          res.render('blog-comments', { blog, logged_in: req.session.logged_in });
       })
       .catch(err => {
           console.log(err);

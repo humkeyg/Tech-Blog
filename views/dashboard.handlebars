@@ -1,5 +1,5 @@
 {{#if logged_in}}
-{{#if posts.length}}
+{{#if blogs.length}}
 <section>
     <h2> {{username}}'s Blog Posts</h2>
     {{#each blogs as |blog|}}
@@ -30,5 +30,4 @@
 
 <button type="submit" class="btn"><a class="link" href="/dashboard/new"> Add New Blog Post</a></button>
 
-<script src="/js/addBlog.js"></script>
 {{/if}}

@@ -75,7 +75,8 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.post('/logout', (req, res) => {
+router.post('/logout', (req, res) => {  
+  console.log(req.session);
 
   if (req.session.logged_in) {
     req.session.destroy(() => {
@@ -83,7 +84,7 @@ router.post('/logout', (req, res) => {
     });
 
   } else {
-    res.status(404).end();
+    res.status(500).end();
   }
 });
 

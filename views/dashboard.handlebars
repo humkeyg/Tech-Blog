@@ -1,7 +1,10 @@
 {{#if logged_in}}
+
+  <button class="new-btn" type="submit"><a class="new-link" href="/dashboard/new"> Add New Blog Post</a></button>
+
 {{#if blogs.length}}
 <section>
-    <h2> {{username}}'s Blog Posts</h2>
+    <h2 class="user-title"> {{username}}'s Blog Posts</h2>
     {{#each blogs as |blog|}}
     <div class="card">
         <div class="card-header">
@@ -27,7 +30,4 @@
     {{/each}}
 </section>
 {{/if}}
-
-<button type="submit" class="btn"><a class="link" href="/dashboard/new"> Add New Blog Post</a></button>
-
 {{/if}}

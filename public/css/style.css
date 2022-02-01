@@ -3,8 +3,7 @@
 }
 
 body {
-  background-image: url('https://image.freepik.com/free-vector/background-with-geometric-shapes-neon-style_23-2148236909.jpg');
-  background-size: cover;
+  background-color: black;
   font-family: 'Play', sans-serif;
   font-size: 24px;
 }
@@ -31,6 +30,14 @@ button {
   border-radius: 5px;
 }
 
+.blog {
+  background-color: #120036;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 5px #36039c;
+  margin: 5px;
+}
+
 .card {
   text-align: center;
   background-color: #8750e0;
@@ -40,11 +47,8 @@ button {
 }
 
 .card-header {
-  background-color:#6862e1;
   padding: 5px;
 }
-
-
 
 .user-title {
   color: white;

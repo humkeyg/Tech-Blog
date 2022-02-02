@@ -38,6 +38,16 @@ button {
   margin: 5px;
 }
 
+.form-label {
+  margin: 10px;
+}
+
+.form-input {
+  height: 100px;
+  width: 1300px;
+  margin: 10px;
+}
+
 .card {
   text-align: center;
   background-color: #8750e0;
